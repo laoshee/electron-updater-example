@@ -6,6 +6,10 @@ log.transports.file.resolvePath = () => path.join('C:/xampp8.1.10/htdocs/newcoba
 log.info('Hello, log');
 log.warn('Some problem appears');
 const appVersion = app.getVersion();
+
+const isDev = require('electron-is-dev');
+// const { autoUpdater } = isDev ? require('electron-updater') : null;
+
 let win;
 const dispatch = (data) => {
     win.webContents.send('message', data)
@@ -33,6 +37,7 @@ ipcMain.on('first-notif', (event, data) => {
     if (!win.isDestroyed()) {
         win.webContents.send('versi-aplikasi', 'v'+ appVersion);
         win.webContents.send('version', 'v'+ appVersion);
+        win.webContents.send('isDev', isDev);
     }
 });
 

@@ -17,6 +17,10 @@ ipcRenderer.on('message', (event, text) => {
 
 })
 
+ipcRenderer.on('isDev', (event, text) => {
+  console.log(text, "is dev");
+})
+
 ipcRenderer.on('version', (event, text) => {
   console.log(text);
   version.innerText = text
