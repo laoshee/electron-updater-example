@@ -1,12 +1,12 @@
 {
   "name": "auto-update-electron",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "beta first",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder",
-    "package": "set GH_TOKEN=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 && electron-builder -p always",
+    "package": "set GH_TOKEN=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 && electron-builder -p always",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "build": {
@@ -16,7 +16,7 @@
       "publish": [
         {
           "provider": "github",
-          "repo": "pupi-electron",
+          "repo": "electron-updater-example",
           "owner": "laoshee",
           "releaseType": "release"
         }
