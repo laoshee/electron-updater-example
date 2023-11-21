@@ -1,22 +1,27 @@
 {
   "name": "auto-update-electron",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "beta first",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder",
-    "package": "set GH_TOKEN=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 && electron-builder -p always",
+    "package": "set GH_TOKEN=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 && electron-builder -p always",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "build": {
-    "publish": [
-      {
-        "provider": "github",
-        "owner": "laoshee",
-        "repo": "electron-updater-example"
-      }
-    ]
+    "appId": "com.droenska.apps",
+    "win": {
+      "target": "nsis",
+      "publish": [
+        {
+          "provider": "github",
+          "repo": "pupi-electron",
+          "owner": "laoshee",
+          "releaseType": "release"
+        }
+      ]
+    }
   },
   "repository": {
     "type": "git",
